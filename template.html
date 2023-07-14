@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width", initial-scale=1.0">
+<title></title>
+<style>
+  body {
+    text-align: center;
+    margin: 0;
+    color: white;
+  }
+
+  section {
+    padding: 30vh 0;
+  }
+  
+  .one {
+    background: #ffc145;
+    position: relative;
+  }
+  
+  .two {
+    background: #ff6b6c;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
+    position: relative;
+    margin-bottom: -10vw;
+  }
+  
+  .three {
+    background: #5b5f97;
+  }
+  
+  .one div {
+    color: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.3);
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-size: 3em;
+  }
+  
+  .one::before,
+  .one::after {
+    position: absolute;
+    content: '';
+    background: #ffc145;
+    height: 150px;
+    width: 150px;
+    z-index: 100;
+    bottom: -1em;
+  }
+  
+  .one::before {
+    left: 50%;
+    transform: skew(0, -20deg);
+  }
+  
+  .one::after {
+    right: 50%;
+    transform: skew(0, 20deg);
+  }
+  
+  .two img {
+    clip-path: circle(250px);
+  }
+
+</style>
+</head>
+<body>
+  <section class="one">
+    <h1>Section One</h1>
+    <div>😀️</div>
+  </section>
+
+  <section class="two">
+    <h1>Section Two</h1>
+    <img src="https://cdn.pixabay.com/photo/2016/10/22/17/46/mountains-1761292_960_720.jpg">
+  </section>
+
+  <section class="three">
+    <h1>Section Three</h1>
+    <div>text</div>
+  </section>
+
+</body>
+</html>
+
