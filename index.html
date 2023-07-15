@@ -8,16 +8,61 @@
   body {
     text-align: center;
     margin: 0;
+    color: rgba(255, 255, 255, 0.89);
+    text-shadow: rgb(53, 53, 53) 1px 0 10px;
+    font-family: system-ui;
+  }
+
+  .navbar {
+    overflow: hidden;
+    background-color: #141414;
+  }
+
+  .navbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 15px 18px;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: sans-serif;
+  }
+
+  .navbar a:hover {
+    background-color: #ff8080cc;
+    color: black;
+  }
+
+  .navbar a.active {
+    background-color: #ce0000;
     color: white;
+  }
+
+  .navbar a.split {
+    float: right;
+    background-color: #04aa0c;
+    color: white;
+  }
+
+  .navbar input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 45px;
+    font-size: 25px;
   }
 
   section {
     padding: 30vh 0;
   }
-  
+
   .one {
     background: #ffc145;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
     position: relative;
+    margin-bottom: -10vw;
+    z-index: 2;
   }
   
   .two {
@@ -43,34 +88,43 @@
     font-size: 3em;
   }
   
-  .one::before,
-  .one::after {
-    position: absolute;
-    content: '';
-    background: #ffc145;
-    height: 150px;
-    width: 150px;
-    z-index: 100;
-    bottom: -1em;
-  }
-  
-  .one::before {
-    left: 50%;
-    transform: skew(0, -20deg);
-  }
-  
-  .one::after {
-    right: 50%;
-    transform: skew(0, 20deg);
-  }
-  
   .two img {
     clip-path: circle(250px);
+  }
+
+  .top {
+    --offset: 50px; 
+    position: sticky;
+    bottom: 20px;      
+    margin-right: 10px; 
+    place-self: end;
+    margin-top: calc(100vh + var(--offset));
+    text-decoration: none;
+    padding: 10px;
+    font-family: sans-serif;
+    color: #fff;
+    background: #353535;
+    border-radius: 100px;
+    white-space: nowrap;
+    opacity: 0.8;
+  }
+
+  .top a {
+    text-align: end;
   }
 
 </style>
 </head>
 <body>
+  <div class="navbar"> 
+    <a class="active" href="#home">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="#help" class="split">Help</a>
+    <input type="text" placeholder="Search...">
+  </div>
+
   <section class="one">
     <h1>Section One</h1>
     <div>😀️</div>
@@ -85,6 +139,8 @@
     <h1>Section Three</h1>
     <div>text</div>
   </section>
+
+  <a href="#" class="top">Back to Top &#8593;</a>
 
 </body>
 </html>
